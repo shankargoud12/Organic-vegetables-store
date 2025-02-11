@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+content="width=device-width, initial-scale=1.0">
+    <title>Home - Organic Vegetables Store</title>
+    <script src="auth.js" defer></script>
+    <link rel="stylesheet"
+href="style.css">
+</head>
+<body>
+    <h2>Welcome to my store</h2>
+    <p>Logged in as: <span id="user-name">Guest</span></p>
+
+    <a href="products.html">products</a>
+|
+    <a href="cart.html">Cart</a> |
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        // Show logged-in user name
+
+document.getElementById("user-name").textContent = localStorage.getItem("loggedInUser") || "Guest";
+
+        // Logout Function
+        function logout() {
+
+localStorage.removeItem("loggedInUser");
+            window.location.href = "login.html";
+         }
+    </script>
+</body>
+</html>
